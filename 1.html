@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html style="background-color: #e5e5e3;">
+    <head>
+        <title>Graphic designer x Illustrator | Shu-an</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=roboto">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            body,
+            h1 {
+                font-family: "roboto", Arial, sans-serif;
+            }
+            h1 {letter-spacing: 6px}
+.w3-row-padding img {margin-bottom: 12px}
+        </style>
+    </head>
+
+<!-- Header -->
+<header class="w3-panel w3-center" style="padding:128px 16px">
+    <img src="./logo.png" style="max-width: 100%; max-height: 150px; height: auto;" >
+  
+  <div class="w3-padding-64">
+    <div class="w3-bar" >
+      <a href="./about_me.html" class="w3-bar-item w3-button w3-text-grey">A B O U T</a>
+      <a href="./index.html" class="w3-bar-item w3-button w3-text-grey">I L L U S T R A T I O N</a>
+      <a href="#" class="w3-bar-item w3-button w3-text-grey">S H O P</a>
+      <a href="#" class="w3-bar-item w3-button w3-text-grey">C O N T A C T</a>
+    </div>
+  </div>
+</header>
+
+        <!-- Photo Grid -->
+    <div class="w3-center" style="padding-bottom:64px">
+            <h1 class="w3-xlarge">Hadouken!!</h1>
+    </div>
+    <div class="w3-row-padding w3-center" id="myGrid" style="margin-bottom:64px">
+            <img src="./1.jpg" style="width:85%">
+        <!-- End Page Content -->
+    </div>
+
+    <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+    <footer class="w3-container w3-padding-64 w3-center w3-xlarge" style="margin-top:128px" >
+        <style>
+            a2 {margin: 20px;}
+        </style>
+            <a2 href="https://www.facebook.com/alus830/?show_switched_toast=0&show_invite_to_follow=0&show_switched_tooltip=0&show_podcast_settings=0&show_community_review_changes=0&show_community_rollback=0&show_follower_visibility_disclosure=0"target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+            <a2 href="https://www.instagram.com/alus830/"target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+            <a2 href="https://www.behance.net/AlanHuangTW"target="_blank"><i class="fa fa-behance w3-hover-opacity"></i></a>
+            <a2 href="https://www.youtube.com/channel/UCxVeSRtDdsq6qhW57Mpvhqg"target="_blank"><i class="fa fa-youtube w3-hover-opacity"></i></a>
+            <p class="w3-tiny">Copyright ©, 2023 Shuan Huang, All Rights Reserved</p>
+            <!-- Footer end. -->
+        </footer>
+    
+        <script>
+            // Toggle grid padding
+            function myFunction() {
+                var x = document.getElementById("myGrid");
+                if (x.className === "w3-row") {
+                    x.className = "w3-row-padding";
+                } else {
+                    x.className = x.className.replace("w3-row-padding", "w3-row");
+                }
+            }
+    
+            // Open and close sidebar
+            function w3_open() {
+                document.getElementById("mySidebar").style.width = "100%";
+                document.getElementById("mySidebar").style.display = "block";
+            }
+    
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+            }
+        </script>
+
+</body>
+
+</html>
