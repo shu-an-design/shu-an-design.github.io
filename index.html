@@ -1,63 +1,87 @@
 <!DOCTYPE html>
 <html style="background-color: #e5e5e3;">
-    <head>
-        <title>Graphic designer x Illustrator | Shu-an</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=roboto">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <style>
-            body,
-            h1 {
-                font-family: "roboto", Arial, sans-serif;
+<head>
+    <title>Graphic designer x Illustrator | Shu-an</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, h1 {
+            font-family: "roboto", Arial, sans-serif;
+        }
+
+        h1 {
+            letter-spacing: 6px;
+        }
+
+        .w3-row-padding img {
+            margin-bottom: 12px;
+        }
+
+        /* 在小屏幕下，将导航栏样式调整为底部导航栏 */
+        @media screen and (max-width: 768px) {
+            .w3-bar, .w3-bottom-nav .w3-bar {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: #f3f3f3;
+                z-index: 1;
+                display: flex;
+                justify-content: space-between;
             }
-            h1 {letter-spacing: 6px}
-.w3-row-padding img {margin-bottom: 12px}
-        .w3-sidebar {
-            width: 250px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
-            z-index: 1;
-            background-color: #f3f3f3;
-            overflow-x: hidden;
-            padding-top: 20px;
+
+            .w3-bar a, .w3-bottom-nav .w3-bar a {
+                padding: 16px;
+                text-decoration: none;
+                font-size: 12px;
+                color: #000;
+                display: block;
+                flex-grow: 1; /* 让按钮水平均匀分散 */
+                text-align: center; /* 文本水平居中 */
+            }
+
+            .w3-bar a:hover, .w3-bottom-nav .w3-bar a:hover {
+                background-color: #ddd;
+            }
+
+            /* 中央对齐底部导航栏内容 */
+            .w3-bottom-nav .w3-bar {
+                justify-content: center;
+            }
         }
-        .w3-sidebar a {
-            padding: 16px;
-            text-decoration: none;
-            font-size: 12px;
-            color: #000;
-            display: block;
+        
+        /* 中央对齐外部容器 */
+        .centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* 使容器铺满视窗高度 */
         }
-        .w3-sidebar a:hover {
-            background-color: #ddd;
-        }
-        </style>
-    </head>
+    </style>
+</head>
+<body>
 
 <!-- Header -->
-<div class="w3-bar w3-hide-medium w3-hide-large w3-left">
-    <button class="w3-bar-item w3-button w3-large w3-xlarge" onclick="w3_open()">☰</button>
-</div>
 <header class="w3-panel w3-center" style="padding:128px 16px">
     <div>
-    <img src="./logo.png" style="max-width: 100%; max-height: 150px; height: auto;" >
+        <img src="./logo.png" style="max-width: 100%; max-height: 150px; height: auto;">
     </div>
+    
     <!-- Navbar (phone) -->
-    <nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-hide-large w3-hide-medium" id="mySidebar">
-        <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-        <div class="w3-padding-64">
-            <div class="w3-bar">
+    <div class="centered">
+        <nav class="w3-bottom-nav">
+            <div class="w3-bar w3-card w3-hide-large w3-hide-medium">
                 <a href="./about_me.html" class="w3-bar-item w3-button w3-text-grey">A B O U T</a>
                 <a href="./index.html" class="w3-bar-item w3-button w3-text-grey">I L L U S T R A T I O N</a>
                 <a href="#" class="w3-bar-item w3-button w3-text-grey">S H O P</a>
                 <a href="#" class="w3-bar-item w3-button w3-text-grey">C O N T A C T</a>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
+    
     <div class="w3-padding-64">
         <div class="w3-bar w3-hide-small">
             <a href="./about_me.html" class="w3-bar-item w3-button w3-text-grey">A B O U T</a>
@@ -68,56 +92,52 @@
     </div>
 </header>
 
-        <!-- Photo Grid -->
-        <div class="w3-row-padding" id="myGrid" style="margin-bottom:128px">
-            <div class="w3-half">
-                <a href="./1.html"><img src="./1.jpg" style="width:100%"></a>
-                <a href="#"><img src="./2.jpg" style="width:100%"></a>
-            </div>
-
-            <div class="w3-half">
-                <a href="#"><img src="./3.jpg" style="width:100%"></a>
-                <a href="#"><img src="./photo .png" style="width:100%"></a>
-            </div>
-        </div>
-
-        <!-- End Page Content -->
+<!-- Photo Grid -->
+<div class="w3-row-padding" id="myGrid" style="margin-bottom:128px">
+    <div class="w3-half">
+        <a href="./1.html"><img src="./1.jpg" style="width:100%"></a>
+        <a href="#"><img src="./2.jpg" style="width:100%"></a>
     </div>
 
-    <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
-   <footer class="w3-container w3-padding-64 w3-center w3-xlarge" style="margin-top:128px" >
+    <div class="w3-half">
+        <a href="#"><img src="./3.jpg" style="width:100%"></a>
+        <a href="#"><img src="./photo .png" style="width:100%"></a>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-xlarge" style="margin-top:128px">
     <style>
         a2 {margin: 20px;}
     </style>
-        <a2 href="https://www.facebook.com/alus830/?show_switched_toast=0&show_invite_to_follow=0&show_switched_tooltip=0&show_podcast_settings=0&show_community_review_changes=0&show_community_rollback=0&show_follower_visibility_disclosure=0"target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-        <a2 href="https://www.instagram.com/alus830/"target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
-        <a2 href="https://www.behance.net/AlanHuangTW"target="_blank"><i class="fa fa-behance w3-hover-opacity"></i></a>
-        <a2 href="https://www.youtube.com/channel/UCxVeSRtDdsq6qhW57Mpvhqg"target="_blank"><i class="fa fa-youtube w3-hover-opacity"></i></a>
-        <p class="w3-tiny">Copyright ©, 2023 Shuan Huang, All Rights Reserved</p>
-        <!-- Footer end. -->
-    </footer>
+    <a2 href="https://www.facebook.com/alus830/?show_switched_toast=0&show_invite_to_follow=0&show_switched_tooltip=0&show_podcast_settings=0&show_community_review_changes=0&show_community_rollback=0&show_follower_visibility_disclosure=0"target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a2>
+    <a2 href="https://www.instagram.com/alus830/"target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a2>
+    <a2 href="https://www.behance.net/AlanHuangTW"target="_blank"><i class="fa fa-behance w3-hover-opacity"></i></a2>
+    <a2 href="https://www.youtube.com/channel/UCxVeSRtDdsq6qhW57Mpvhqg"target="_blank"><i class="fa fa-youtube w3-hover-opacity"></i></a2>
+    <p class="w3-tiny">Copyright ©, 2023 Shuan Huang, All Rights Reserved</p>
+</footer>
 
-    <script>
-        // Toggle grid padding
-        function myFunction() {
-            var x = document.getElementById("myGrid");
-            if (x.className === "w3-row") {
-                x.className = "w3-row-padding";
-            } else {
-                x.className = x.className.replace("w3-row-padding", "w3-row");
-            }
+<script>
+    // Toggle grid padding
+    function myFunction() {
+        var x = document.getElementById("myGrid");
+        if (x.className === "w3-row") {
+            x.className = "w3-row-padding";
+        } else {
+            x.className = x.className.replace("w3-row-padding", "w3-row");
         }
+    }
 
-        // Open and close sidebar
-        function w3_open() {
-            document.getElementById("mySidebar").style.width = "100%";
-            document.getElementById("mySidebar").style.display = "block";
-        }
+    // Open and close sidebar
+    function w3_open() {
+        document.getElementById("mySidebar").style.width = "100%";
+        document.getElementById("mySidebar").style.display = "block";
+    }
 
-        function w3_close() {
-            document.getElementById("mySidebar").style.display = "none";
-        }
-    </script>
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+    }
+</script>
 
 </body>
 </html>
