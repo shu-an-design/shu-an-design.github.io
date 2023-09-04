@@ -1,59 +1,104 @@
 <!DOCTYPE html>
 <html style="background-color: #e5e5e3;">
-    <head>
-        <title>Graphic designer x Illustrator | Shu-an</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=roboto">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <style>
-            body,
-            h1 {
-                font-family: "roboto", Arial, sans-serif;
-            }
-            h1 {letter-spacing: 6px}
+<head>
+    <title>Graphic designer x Illustrator | Shu-an</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body,
+        h1 {
+            font-family: "roboto", Arial, sans-serif;
+        }
+        h1 {letter-spacing: 6px}
 .w3-row-padding img {margin-bottom: 12px}
-   /* 小型手機（最小寬度 320px） */
-   @media screen and (min-width: 320px) {
-            .my-text p {
-                padding: 0 20px; /* 調整左右留白的大小 */
-            }
+/* 小型手機（最小寬度 320px） */
+@media screen and (min-width: 320px) {
+        .my-text p {
+            padding: 0 20px; /* 調整左右留白的大小 */
         }
-    /* 大型手機（最小寬度 576px） */
-        @media screen and (min-width: 576px) {
-            .my-text p {
-                padding: 0 30px; /* 調整左右留白的大小 */
-            }
+    }
+/* 大型手機（最小寬度 576px） */
+    @media screen and (min-width: 576px) {
+        .my-text p {
+            padding: 0 30px; /* 調整左右留白的大小 */
         }
-    /* 媒體查詢：當屏幕寬度小於768px時，調整文字左右留白 */
-        @media screen and (max-width: 768px) {a
-            .my-text p {
-                padding: 0 40px; /* 調整左右留白的大小 */
-            }
+    }
+/* 媒體查詢：當屏幕寬度小於768px時，調整文字左右留白 */
+    @media screen and (max-width: 768px) {a
+        .my-text p {
+            padding: 0 40px; /* 調整左右留白的大小 */
         }
-    /* 大型桌面（最小寬度 1200px） */
-    @media screen and (min-width: 1200px) {
-    .my-text p {
-                padding: 0 150px; /* 調整左右留白的大小 */
+         /* 在小屏幕下，将导航栏样式调整为底部导航栏 */
+        .w3-bottom-nav{
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: #f3f3f3;
+                z-index: 1;
+                display: flex;
+                justify-content: space-between;
+                padding: 0; /* 減少底部導航欄的內邊距 */
             }
-        }
+            .w3-bottom-nav{
+                padding: 16px;
+                text-decoration: none;
+                font-size: 12px;
+                color: #000;
+                display: block;
+                flex-grow: 1; /* 让按钮水平均匀分散 */
+                text-align: center; /* 文本水平居中 */
+            }
 
-        </style>
-    </head>
+            .w3-bottom-nav .w3-bar a:hover {
+                background-color: #ddd;
+            }
+
+            /* 中央对齐底部导航栏内容 */
+            .w3-bottom-nav{
+                justify-content: center;
+            }
+    }
+/* 大型桌面（最小寬度 1200px） */
+@media screen and (min-width: 1200px) {
+.my-text p {
+            padding: 0 150px; /* 調整左右留白的大小 */
+        }
+    }
+
+    </style>
+</head>
+<body>
 
 <!-- Header -->
-<header class="w3-panel w3-center" style="padding:128px 16px">
-    <img src="./logo2.png" style="max-width: 100%; max-height: 150px; height: auto;">
-  
-  <div class="w3-padding-64">
-    <div class="w3-bar color: #787979" >
-        <a href="./about_me.html" class="w3-bar-item w3-button w3-text-grey">A B O U T</a>
-        <a href="./index.html" class="w3-bar-item w3-button w3-text-grey">W O R K S</a>
-        <a href="#" class="w3-bar-item w3-button w3-text-grey">S H O P</a>
-        <a href="#" class="w3-bar-item w3-button w3-text-grey">C O N T A C T</a>
+<header class="w3-panel w3-center" style="padding: 128px 16px;">
+    <div class="header-logo">
+        <img src="./logo.png" style="max-width: 100%; max-height: 150px; height: auto;">
     </div>
-  </div>
+    
+    <!-- Navbar (phone) -->
+    <div class="centered">
+        <nav class="w3-bottom-nav">
+            <div class="w3-bar2 w3-card w3-hide-large w3-hide-medium">
+                <a href="./about_me.html" class="w3-bar-item w3-button w3-text-grey">A B O U T</a>
+                <a href="./index.html" class="w3-bar-item w3-button w3-text-grey">I L L U S T R A T I O N</a>
+                <a href="#" class="w3-bar-item w3-button w3-text-grey">S H O P</a>
+                <a href="#" class="w3-bar-item w3-button w3-text-grey">C O N T A C T</a>
+            </div>
+        </nav>
+    </div>
+    
+    <div class="w3-padding-64">
+        <div class="w3-bar color: #787979 w3-hide-small" >
+            <a href="./about_me.html" class="w3-bar-item w3-button w3-text-grey">A B O U T</a>
+            <a href="./index.html" class="w3-bar-item w3-button w3-text-grey">W O R K S</a>
+            <a href="#" class="w3-bar-item w3-button w3-text-grey">S H O P</a>
+            <a href="#" class="w3-bar-item w3-button w3-text-grey">C O N T A C T</a>
+        </div>
+      </div>
 </header>
 <div class="w3-panel w3-center my-text">
     <p class="w3-text-grey" style="text-align: left; line-height: 2;">
