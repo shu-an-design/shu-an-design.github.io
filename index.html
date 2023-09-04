@@ -39,17 +39,33 @@
     </head>
 
 <!-- Header -->
+<div class="w3-bar w3-hide-medium w3-hide-large w3-left">
+    <button class="w3-bar-item w3-button w3-large" onclick="w3_open()">☰</button>
+</div>
 <header class="w3-panel w3-center" style="padding:128px 16px">
+    <div>
     <img src="./logo.png" style="max-width: 100%; max-height: 150px; height: auto;" >
-  
-  <div class="w3-padding-64">
-    <div class="w3-bar" >
-      <a href="./about_me.html" class="w3-bar-item w3-button w3-text-grey">A B O U T</a>
-      <a href="./index.html" class="w3-bar-item w3-button w3-text-grey">I L L U S T R A T I O N</a>
-      <a href="#" class="w3-bar-item w3-button w3-text-grey">S H O P</a>
-      <a href="#" class="w3-bar-item w3-button w3-text-grey">C O N T A C T</a>
     </div>
-  </div>
+    <!-- Navbar (phone) -->
+    <nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-hide-large w3-hide-medium" id="mySidebar">
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+        <div class="w3-padding-64">
+            <div class="w3-bar">
+                <a href="./about_me.html" class="w3-bar-item w3-button w3-text-grey">A B O U T</a>
+                <a href="./index.html" class="w3-bar-item w3-button w3-text-grey">I L L U S T R A T I O N</a>
+                <a href="#" class="w3-bar-item w3-button w3-text-grey">S H O P</a>
+                <a href="#" class="w3-bar-item w3-button w3-text-grey">C O N T A C T</a>
+            </div>
+        </div>
+    </nav>
+    <div class="w3-padding-64">
+        <div class="w3-bar w3-hide-small">
+            <a href="./about_me.html" class="w3-bar-item w3-button w3-text-grey">A B O U T</a>
+            <a href="./index.html" class="w3-bar-item w3-button w3-text-grey">I L L U S T R A T I O N</a>
+            <a href="#" class="w3-bar-item w3-button w3-text-grey">S H O P</a>
+            <a href="#" class="w3-bar-item w3-button w3-text-grey">C O N T A C T</a>
+        </div>
+    </div>
 </header>
 
         <!-- Photo Grid -->
