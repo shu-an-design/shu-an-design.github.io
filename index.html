@@ -59,31 +59,29 @@
 .my-text p {
             padding: 0 150px; /* 調整左右留白的大小 */
         }
-.w3-bottom-nav {
-        display: none;
-    }
 .header-logo img {
         max-width: 120px; /* 设置中型屏幕下的最大宽度 */
         height: auto; /* 自动计算高度以保持比例 */
     }
+    .w3-bottom-nav {
+        display: none;
+        height: 0; /* 或者 height: auto; */
+    }
 }
-         /* 在小屏幕下，将导航栏样式调整为底部导航栏 */
+/* 在小屏幕下，将导航栏样式调整为底部导航栏 */
         .w3-bottom-nav{
                 position: fixed;
                 bottom: 0;
                 left: 0;
                 width: 100%;
                 background-color: #e5e5e3;
-                z-index: 1;
-                display: flex;
                 justify-content: space-between;
                 padding: 0; /* 減少底部導航欄的內邊距 */
                 align-items: center; 
-                height: 80px;
-                line-height:80px;
+                line-height: 60px;
+                height: 60p;
             }
             .w3-bottom-nav{
-                padding: 0;
                 text-decoration: none;
                 font-size: 12px;
                 color: #000;
@@ -94,11 +92,6 @@
 
             .w3-bottom-nav .w3-bar a:hover {
                 background-color: #ddd;
-            }
-
-            /* 中央对齐底部导航栏内容 */
-            .w3-bottom-nav{
-                justify-content: center;
             }
     </style>
 </head>
@@ -111,18 +104,16 @@
     </div>
     
     <!-- Navbar (phone) -->
-    <div class="centered">
         <nav class="w3-bottom-nav">
-            <div class="w3-bar2 w3-card w3-hide-large w3-hide-medium">
+            <div class="w3-card w3-hide-large w3-hide-medium">
                 <a href="./about_me.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">A B O U T</a>
                 <a href="./index.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">I L L U S T R A T I O N</a>
                 <a href="#" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">S H O P</a>
             </div>
         </nav>
-    </div>
     
     <div class="w3-padding-64">
-        <div class="w3-bar color: #787979 w3-hide-small" >
+        <div class="w3-bar w3-hide-small" >
             <a href="./about_me.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">A B O U T</a>
             <a href="./index.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">I L L U S T R A T I O N</a>
             <a href="#" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">S H O P</a>
@@ -152,7 +143,7 @@
     <a2 href="https://www.instagram.com/alus830/"target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a2>
     <a2 href="https://www.behance.net/AlanHuangTW"target="_blank"><i class="fa fa-behance w3-hover-opacity"></i></a2>
     <a2 href="https://www.youtube.com/channel/UCxVeSRtDdsq6qhW57Mpvhqg"target="_blank"><i class="fa fa-youtube w3-hover-opacity"></i></a2>
-    <p class="w3-tiny" style="margin-bottom:64px">Copyright ©, 2023 Shuan Huang, All Rights Reserved</p>
+    <p class="w3-tiny" style="margin-bottom:48px">Copyright ©, 2023 Shuan Huang, All Rights Reserved</p>
 </footer>
 
 <script>
