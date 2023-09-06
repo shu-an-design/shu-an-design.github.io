@@ -13,24 +13,57 @@
             font-family: "roboto", Arial, sans-serif;
         }
         h1 {letter-spacing: 6px}
-.w3-row-padding img {margin-bottom: 12px}
+        .w3-row-padding img {margin-bottom: 12px}
 /* 小型手機（最小寬度 320px） */
 @media screen and (min-width: 320px) {
         .my-text p {
             padding: 0 20px; /* 調整左右留白的大小 */
         }
+        .my-photo{
+            padding: 0 50px; /* 調整左右留白的大小 */
+        }
+        .header-logo img {
+        max-width: 60px; /* 设置小屏幕下的最大宽度 */
+        height: auto; /* 自动计算高度以保持比例 */
+        }
+    
     }
 /* 大型手機（最小寬度 576px） */
     @media screen and (min-width: 576px) {
         .my-text p {
             padding: 0 30px; /* 調整左右留白的大小 */
         }
+        .my-photo{
+            padding: 0 100px; /* 調整左右留白的大小 */
+        }
+        .header-logo img {
+        max-width: 80px; /* 设置小屏幕下的最大宽度 */
+        height: auto; /* 自动计算高度以保持比例 */
+        }
     }
 /* 媒體查詢：當屏幕寬度小於768px時，調整文字左右留白 */
-    @media screen and (max-width: 768px) {a
-        .my-text p {
-            padding: 0 40px; /* 調整左右留白的大小 */
+@media screen and (min-width: 768px) {
+    .my-text p {
+        padding: 0 40px; /* 調整左右留白的大小 */
+    }
+    .my-photo{
+        padding: 0 100px; /* 調整左右留白的大小 */
+    }
+    .header-logo img {
+        max-width: 100px; /* 设置小屏幕下的最大宽度 */
+        height: auto; /* 自动计算高度以保持比例 */
+    }
+}
+/* 大型桌面（最小寬度 1200px） */
+@media screen and (min-width: 1200px) {
+.my-text p {
+            padding: 0 150px; /* 調整左右留白的大小 */
         }
+    .header-logo img {
+        max-width: 120px; /* 设置中型屏幕下的最大宽度 */
+        height: auto; /* 自动计算高度以保持比例 */
+    }
+}
          /* 在小屏幕下，将导航栏样式调整为底部导航栏 */
         .w3-bottom-nav{
                 position: fixed;
@@ -62,13 +95,6 @@
                 justify-content: center;
             }
     }
-/* 大型桌面（最小寬度 1200px） */
-@media screen and (min-width: 1200px) {
-.my-text p {
-            padding: 0 150px; /* 調整左右留白的大小 */
-        }
-    }
-
     </style>
 </head>
 <body>
@@ -76,7 +102,7 @@
 <!-- Header -->
 <header class="w3-panel w3-center" style="padding: 128px 16px;">
     <div class="header-logo">
-        <a href="./index.html"><img src="./logo.png" style="max-width: 100%; max-height: 150px; height: auto;">
+        <a href="./index.html"><img src="./logo.png">
     </div>
     
     <!-- Navbar (phone) -->
@@ -100,7 +126,7 @@
 </header>
 
 <!-- Photo Grid -->
-<div class="w3-row-padding" id="myGrid">
+<div class="w3-row-padding my-photo" id="myGrid">
     <div class="w3-half">
         <a href="./1.html"><img src="./1.jpg" style="width:100%"></a>
         <a href="#"><img src="./2.jpg" style="width:100%"></a>
