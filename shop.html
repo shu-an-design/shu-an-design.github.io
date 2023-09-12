@@ -147,6 +147,22 @@
     <input type="submit" value="Subscribe">
   </div>
 </form> 
+	    <script>
+        $(document).ready(function () {
+            $("#nameForm").submit(function (event) {
+                event.preventDefault(); // 阻止表单的默认提交行为
+
+                $.ajax({
+                    type: "POST",
+                    url: "process.php",
+                    data: $("#nameForm").serialize(), // 将表单数据序列化
+                    success: function (response) {
+                        $("#response").html(response); // 在页面上显示响应
+                    }
+                });
+            });
+        });
+    </script>
 <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
     <footer class="w3-container w3-padding-64 w3-center w3-xlarge" style="margin-top:128px" >
         <style>
