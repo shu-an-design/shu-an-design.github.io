@@ -132,24 +132,23 @@
 </header>
 
         <!-- Form -->
- <form>
+ 
   <div class="container w3-center">
     <h1 class="w3-xlarge w3-text-grey">Coming soon</h1>
      <p class="w3-medium w3-text-grey"> We are almost there! </br>If you want to get notified when the website goes live, subscribe to our mailing list!</p>
   </div>
-
-  <div class="container w3-center" style="background-color:#e5e5e3">
-    <input id="name" type="text" placeholder="Name" name="Your name" required>
-    <input id="email" type="text" placeholder="Email address" name="mail" required>
-  </div>
-
-  <div class="container w3-center">
-    <button class="w3-button" type="submit" value="Subscribe">
-        Subscribe
-    </button>
-  </div>
-	 
-</form> 
+  
+<div class="container w3-center" style="background-color:#e5e5e3">
+    <form action="https://docs.google.com/forms/u/2/d/e/1FAIpQLScc3-9n2nj1CGlkkqLxrwz13y3rbEXk7xJbcl1SYa9Uw3Pycw/formResponse"
+          method="POST"
+          id="contact_form"
+          name="contact_form"
+          class="feedback-form">
+        <input class="form__name" type="text" placeholder="Name" name="entry.1597522291" id="name" required />
+        <input class="form__email" type="text" placeholder="Email" name="entry.463085941" id="email" required />
+        <button class="w3-button" style="display: block;">Subscribe</button>
+    </form>
+</div>
 
 <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
     <footer class="w3-container w3-padding-64 w3-center w3-xlarge" style="margin-top:128px" >
@@ -163,40 +162,58 @@
             <p class="w3-tiny">Copyright ©, 2023 Shuan Huang, All Rights Reserved</p>
             <!-- Footer end. -->
         </footer>
+        <div id="dropDownSelect1"></div>
+
+        <!--===============================================================================================-->
+        <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/animsition/js/animsition.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/select2/select2.min.js"></script>
         <script>
           $(".selection-2").select2({
             minimumResultsForSearch: 20,
             dropdownParent: $('#dropDownSelect1')
           });
         </script>
+        <!--===============================================================================================-->
+        <script src="vendor/daterangepicker/moment.min.js"></script>
+        <script src="vendor/daterangepicker/daterangepicker.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/countdowntime/countdowntime.js"></script>
+        <!--===============================================================================================-->
         <script src="./main.js"></script>
         <script>
-          $('#google-form').submit(function (e) {
-            //在這裡我們要先擋掉form默認事件
-            e.preventDefault();
-      
-            if ($('#name').val() && $('#score').val()) {//需要先確認必填欄位是否填寫
-              $.ajax({
-                // url為Google Form按下submit的aciotn
-                url: "https://docs.google.com/forms/u/2/d/e/1FAIpQLScc3-9n2nj1CGlkkqLxrwz13y3rbEXk7xJbcl1SYa9Uw3Pycw/formResponse",
-                crossDomain: true,//解決跨網域CORS的問題
-                data: {// entry.xxxxx 這些需要填寫您表單裡面的值，與其相互對應
-                  "entry.1597522291": $('#name').val(),
-                  "entry.463085941": $('#email').val(),
-                },
-                type: "POST", //因為是要進行insert的動作，故事用POST
-                dataType: "JSONP",
-                complete: function () {
-                  //完成後把這些欄位清空
-                  $('#name').val('')
-                  $('#email').val('')
-                  //最後跳轉到感謝的頁面
-                  window.location.replace("index.html");
-                }
-              });
+$('#contact_form').submit(function (e) {
+    // 阻止表单默认事件
+    e.preventDefault();
+
+    if ($('#name_input').val() && $('#email_input').val()) {
+        // 发送数据到Google Forms
+        $.ajax({
+            url: "https://docs.google.com/forms/u/2/d/e/1FAIpQLScc3-9n2nj1CGlkkqLxrwz13y3rbEXk7xJbcl1SYa9Uw3Pycw/formResponse",
+            crossDomain: true,
+            data: {
+                "entry.1597522291": $('#name_input').val(),
+                "entry.463085941": $('#email_input').val(),
+            },
+            type: "POST",
+            dataType: "JSONP",
+            complete: function () {
+                // 清空表单字段
+                $('#name_input').val('');
+                $('#email_input').val('');
+                // 重定向到感谢页面
+                window.location.replace("1.html");
             }
-          });
+        });
+    }
+});
+
         </script>
-        
+
     </body>
-</html>
+    </html>
