@@ -139,30 +139,15 @@
   </div>
 
   <div class="container w3-center" style="background-color:#e5e5e3">
-    <input type="text" placeholder="Name" name="name" required>
-    <input type="text" placeholder="Email address" name="mail" required>
+    <input id="name" type="text" placeholder="Name" name="Your name" required>
+    <input id="email" type="text" placeholder="Email address" name="mail" required>
   </div>
 
   <div class="container w3-center">
     <input type="submit" value="Subscribe">
   </div>
 </form> 
-	    <script>
-        $(document).ready(function () {
-            $("#nameForm").submit(function (event) {
-                event.preventDefault(); // 阻止表单的默认提交行为
 
-                $.ajax({
-                    type: "POST",
-                    url: "process.php",
-                    data: $("#nameForm").serialize(), // 将表单数据序列化
-                    success: function (response) {
-                        $("#response").html(response); // 在页面上显示响应
-                    }
-                });
-            });
-        });
-    </script>
 <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
     <footer class="w3-container w3-padding-64 w3-center w3-xlarge" style="margin-top:128px" >
         <style>
@@ -175,7 +160,57 @@
             <p class="w3-tiny">Copyright ©, 2023 Shuan Huang, All Rights Reserved</p>
             <!-- Footer end. -->
         </footer>
-   
-    </body>
-    </html>
+        <div id="dropDownSelect1"></div>
 
+        <!--===============================================================================================-->
+        <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/animsition/js/animsition.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/select2/select2.min.js"></script>
+        <script>
+          $(".selection-2").select2({
+            minimumResultsForSearch: 20,
+            dropdownParent: $('#dropDownSelect1')
+          });
+        </script>
+        <!--===============================================================================================-->
+        <script src="vendor/daterangepicker/moment.min.js"></script>
+        <script src="vendor/daterangepicker/daterangepicker.js"></script>
+        <!--===============================================================================================-->
+        <script src="vendor/countdowntime/countdowntime.js"></script>
+        <!--===============================================================================================-->
+        <script src="js/main.js"></script>
+        <script>
+          $('#google-form').submit(function (e) {
+            //在這裡我們要先擋掉form默認事件
+            e.preventDefault();
+      
+            if ($('#name').val() && $('#score').val()) {//需要先確認必填欄位是否填寫
+              $.ajax({
+                // url為Google Form按下submit的aciotn
+                url: "https://docs.google.com/forms/u/2/d/e/1FAIpQLScc3-9n2nj1CGlkkqLxrwz13y3rbEXk7xJbcl1SYa9Uw3Pycw/formResponse",
+                crossDomain: true,//解決跨網域CORS的問題
+                data: {// entry.xxxxx 這些需要填寫您表單裡面的值，與其相互對應
+                  "entry.1597522291": $('#name').val(),
+                  "entry.463085941": $('#email').val(),
+                },
+                type: "POST", //因為是要進行insert的動作，故事用POST
+                dataType: "JSONP",
+                complete: function () {
+                  //完成後把這些欄位清空
+                  $('#name').val('')
+                  $('#email').val('')
+                  //最後跳轉到感謝的頁面
+                  window.location.replace("thank.html");
+                }
+              });
+            }
+          });
+        </script>
+        
+    </body>
+</html>
