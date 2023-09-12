@@ -1,73 +1,155 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Graphic designer x Illustrator | Shu-an</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <style>
-            body,
-            h1 {
-                font-family: "Raleway", Arial, sans-serif
+<html style="background-color: #e5e5e3;">
+<head>
+    <title>Graphic designer x Illustrator | Shu-an</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body,
+        h1 {
+            font-family: "roboto", Arial, sans-serif;
+        }
+        h1 {letter-spacing: 6px}
+        .w3-row-padding img {margin-bottom: 12px}
+/* 小型手機（最小寬度 320px） */
+@media screen and (min-width: 320px) {
+        .my-text p {
+            padding: 0 10px; /* 調整左右留白的大小 */
+			margin-top:-50px
+        }
+        .my-photo{
+            padding: 0 80px; /* 調整左右留白的大小 */
+            margin-top:-50px
+        }
+        .header-logo img {
+        max-width: 100px; /* 设置小屏幕下的最大宽度 */
+        height: auto; /* 自动计算高度以保持比例 */
+        }
+    
+    }
+/* 大型手機（最小寬度 576px） */
+    @media screen and (min-width: 576px) {
+        .my-text p {
+            padding: 0 10px; /* 調整左右留白的大小 */
+			margin-top:-50px
+        }
+        .my-photo{
+            padding: 0 120px; /* 調整左右留白的大小 */
+            margin-top:-50px
+        }
+        .header-logo img {
+        max-width: 100px; /* 设置小屏幕下的最大宽度 */
+        height: auto; /* 自动计算高度以保持比例 */
+        }
+    }
+/* 媒體查詢：當屏幕寬度小於768px時，調整文字左右留白 */
+@media screen and (min-width: 768px) {
+    .my-text p {
+        padding: 0 15px; /* 調整左右留白的大小 */
+		margin-top:-50px
+    }
+    .my-photo{
+        padding: 0 140px; /* 調整左右留白的大小 */
+        margin-top:-50px
+    }
+    .header-logo img {
+        max-width: 120px; /* 设置小屏幕下的最大宽度 */
+        height: auto; /* 自动计算高度以保持比例 */
+    }
+}
+/* 大型桌面（最小寬度 1200px） */
+@media screen and (min-width: 1200px) {
+.my-text p {
+            padding: 0 300px; /* 調整左右留白的大小 */
+			margin-top:-30px
+        }
+.my-photo{
+        padding: 0 160px; /* 調整左右留白的大小 */
+        margin-top:-30px
+    }
+.header-logo img {
+        max-width: 120px; /* 设置中型屏幕下的最大宽度 */
+        height: auto; /* 自动计算高度以保持比例 */
+    }
+    .w3-bottom-nav {
+        display: none;
+        height: 0; /* 或者 height: auto; */
+    }
+}
+/* 在小屏幕下，将导航栏样式调整为底部导航栏 */
+        .w3-bottom-nav{
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: #e5e5e3;
+                justify-content: space-between;
+                padding: 0; /* 減少底部導航欄的內邊距 */
+                align-items: center; 
+                line-height: 50px;
+                height: 50p;
             }
-            h1 {letter-spacing: 6px}
-.w3-row-padding img {margin-bottom: 12px}
-        </style>
-    </head>
+            .w3-bottom-nav{
+                text-decoration: none;
+                font-size: 12px;
+                color: #000;
+                display: block;
+                flex-grow: 1; /* 让按钮水平均匀分散 */
+                text-align: center; /* 文本水平居中 */
+            }
+
+            .w3-bottom-nav .w3-bar a:hover {
+                background-color: #ddd;
+            }
+    </style>
+</head>
 
 <!-- Header -->
-<header class="w3-panel w3-center w3-opacity" style="padding:128px 16px">
-  <h1 class="w3-xlarge">DESIGNER</h1>
-  <h1>Shu-an Huang</h1>
-  <p>A Graphic designer, Illustrator ,drummer & electronic musician</p>
-  
-  <div class="w3-padding-32">
-    <div class="w3-bar w3-border">
-      <a href="https://shuanhuang.w3spaces.com/index.html" class="w3-bar-item w3-button">Home</a>
-      <a href="https://shuanhuang.w3spaces.com/about_me.html" class="w3-bar-item w3-button w3-light-grey">About</a>
-      <a href="https://shuanhuang.w3spaces.com/contact.html" class="w3-bar-item w3-button">Contact</a>
+<header class="w3-panel w3-center" style="padding: 128px 16px;">
+    <div class="header-logo">
+        <a href="./index.html"><img src="./logo.png">
     </div>
-  </div>
+    
+    <!-- Navbar (phone) -->
+        <nav class="w3-bottom-nav">
+            <div class="w3-card w3-hide-large w3-hide-medium">
+                <a href="./about_me.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">A B O U T</a>
+                <a href="./index.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">I L L U S T R A T I O N</a>
+                <a href="./shop.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">S H O P</a>
+            </div>
+        </nav>
+    
+    <div class="w3-hide-small">
+        <div class="w3-bar w3-padding-64 " >
+            <a href="./about_me.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">A B O U T</a>
+            <a href="./index.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">I L L U S T R A T I O N</a>
+            <a href="./shop.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">S H O P</a>
+        </div>
+      </div>
 </header>
+
 
         <!-- Photo Grid -->
 
         <!-- End Page Content -->
     </div>
 
-    <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
-   <footer class="w3-container w3-padding-100 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin-top:128px">
-        <a href="https://www.facebook.com/alus830/?show_switched_toast=0&show_invite_to_follow=0&show_switched_tooltip=0&show_podcast_settings=0&show_community_review_changes=0&show_community_rollback=0&show_follower_visibility_disclosure=0"target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
-        <a href="https://www.instagram.com/alus830/"target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
-        <a href="https://www.behance.net/AlanHuangTW"target="_blank"><i class="fa fa-behance w3-hover-opacity"></i></a>
-        <a href="https://www.youtube.com/channel/UCxVeSRtDdsq6qhW57Mpvhqg"target="_blank"><i class="fa fa-youtube w3-hover-opacity"></i></a>
-    <!-- Footer end. -->
-    </footer>
+<!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+    <footer class="w3-container w3-padding-64 w3-center w3-xlarge" style="margin-top:128px" >
+        <style>
+            a2 {margin: 20px;}
+        </style>
+            <a2 href="https://www.facebook.com/alus830/?show_switched_toast=0&show_invite_to_follow=0&show_switched_tooltip=0&show_podcast_settings=0&show_community_review_changes=0&show_community_rollback=0&show_follower_visibility_disclosure=0"target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+            <a2 href="https://www.instagram.com/alus830/"target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+            <a2 href="https://www.behance.net/AlanHuangTW"target="_blank"><i class="fa fa-behance w3-hover-opacity"></i></a>
+            <a2 href="https://www.youtube.com/channel/UCxVeSRtDdsq6qhW57Mpvhqg"target="_blank"><i class="fa fa-youtube w3-hover-opacity"></i></a>
+            <p class="w3-tiny">Copyright ©, 2023 Shuan Huang, All Rights Reserved</p>
+            <!-- Footer end. -->
+        </footer>
+   
+    </body>
+    </html>
 
-    <script>
-        // Toggle grid padding
-        function myFunction() {
-            var x = document.getElementById("myGrid");
-            if (x.className === "w3-row") {
-                x.className = "w3-row-padding";
-            } else {
-                x.className = x.className.replace("w3-row-padding", "w3-row");
-            }
-        }
-
-        // Open and close sidebar
-        function w3_open() {
-            document.getElementById("mySidebar").style.width = "100%";
-            document.getElementById("mySidebar").style.display = "block";
-        }
-
-        function w3_close() {
-            document.getElementById("mySidebar").style.display = "none";
-        }
-    </script>
-
-</body>
-
-</html>
