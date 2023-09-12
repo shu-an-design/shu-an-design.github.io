@@ -252,17 +252,12 @@ form {
 
 /* Style the input elements and the submit button */
 input[type=text], input[type=submit] {
-  width: 100%;
+  width: 50%;
   padding: 12px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
-}
-
-/* Add margins to the checkbox */
-input[type=checkbox] {
-  margin-top: 16px;
 }
 
 /* Style the submit button */
