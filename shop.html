@@ -215,8 +215,8 @@ $('#contact_form').submit(function (e) {
             dataType: "JSONP",
             complete: function () {
                 // 清空表单字段
-                $('#name_input').val('');
-                $('#email_input').val('');
+		$('#name').val('');
+		$('#email').val('');
                 // 重定向到感谢页面
                 window.location.href = 'thank.html';
             }
