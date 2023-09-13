@@ -148,17 +148,16 @@
   </div>
   
 <div class="container w3-center" style="background-color:#e5e5e3">
-    <form action="https://docs.google.com/forms/u/2/d/e/1FAIpQLScc3-9n2nj1CGlkkqLxrwz13y3rbEXk7xJbcl1SYa9Uw3Pycw/formResponse"
-          method="POST"
-          id="contact_form"
-          name="contact_form"
-          class="feedback-form">
-        <input class="form__name" type="text" placeholder="Name" name="entry.1597522291" id="name" required />
-        <input class="form__email" type="text" placeholder="Email" name="entry.463085941" id="email" required />
-        <button class="w3-button w3-center subscribe-button" onclick="redirectToThankPage()">Subscribe</button>
+   <form action="https://docs.google.com/forms/u/2/d/e/1FAIpQLScc3-9n2nj1CGlkkqLxrwz13y3rbEXk7xJbcl1SYa9Uw3Pycw/formResponse"
+      method="POST"
+      id="contact_form"
+      name="contact_form"
+      class="feedback-form">
+    <input class="form__name" type="text" placeholder="Name" name="entry.1597522291" id="name" required />
+    <input class="form__email" type="text" placeholder="Email" name="entry.463085941" id="email" required />
+    <button class="w3-button w3-center subscribe-button" id="submit-button">Subscribe</button>
+</form>
 
-
-    </form>
 </div>
 
 <!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
@@ -191,8 +190,8 @@ $('#contact_form').submit(function (e) {
             dataType: "JSONP",
             complete: function () {
                 // 清空表单字段
-		$('#name').val('');
-		$('#email').val('');
+                $('#name').val('');
+                $('#email').val('');
                 // 重定向到感谢页面
                 window.location.replace("thank.html");
             }
