@@ -173,43 +173,19 @@
             <p class="w3-tiny">Copyright ©, 2023 Shuan Huang, All Rights Reserved</p>
             <!-- Footer end. -->
         </footer>
-        <div id="dropDownSelect1"></div>
 
-        <!--===============================================================================================-->
-        <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-        <!--===============================================================================================-->
-        <script src="vendor/animsition/js/animsition.min.js"></script>
-        <!--===============================================================================================-->
-        <script src="vendor/bootstrap/js/popper.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-        <!--===============================================================================================-->
-        <script src="vendor/select2/select2.min.js"></script>
-        <script>
-          $(".selection-2").select2({
-            minimumResultsForSearch: 20,
-            dropdownParent: $('#dropDownSelect1')
-          });
-        </script>
-        <!--===============================================================================================-->
-        <script src="vendor/daterangepicker/moment.min.js"></script>
-        <script src="vendor/daterangepicker/daterangepicker.js"></script>
-        <!--===============================================================================================-->
-        <script src="vendor/countdowntime/countdowntime.js"></script>
-        <!--===============================================================================================-->
-        <script src="./main.js"></script>
-        <script>
 $('#contact_form').submit(function (e) {
     // 阻止表单默认事件
     e.preventDefault();
 
-    if ($('#name_input').val() && $('#email_input').val()) {
+    if ($('#name').val() && $('#email').val()) {
         // 发送数据到Google Forms
         $.ajax({
             url: "https://docs.google.com/forms/u/2/d/e/1FAIpQLScc3-9n2nj1CGlkkqLxrwz13y3rbEXk7xJbcl1SYa9Uw3Pycw/formResponse",
             crossDomain: true,
             data: {
-                "entry.1597522291": $('#name_input').val(),
-                "entry.463085941": $('#email_input').val(),
+                "entry.1597522291": $('#name').val(),
+                "entry.463085941": $('#email').val(),
             },
             type: "POST",
             dataType: "JSONP",
@@ -218,7 +194,7 @@ $('#contact_form').submit(function (e) {
 		$('#name').val('');
 		$('#email').val('');
                 // 重定向到感谢页面
-                window.location.href = 'thank.html';
+                window.location.replace("thank.html");
             }
         });
     }
