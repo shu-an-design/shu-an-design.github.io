@@ -4,7 +4,7 @@
     <title>Graphic designer x Illustrator | Shu-an</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=roboto">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
@@ -63,7 +63,7 @@
 /* 大型桌面（最小寬度 1200px） */
 @media screen and (min-width: 1200px) {
 .my-text p {
-            padding: 0 300px; /* 調整左右留白的大小 */
+            padding: 0 250px; /* 調整左右留白的大小 */
 			margin-top:-30px
         }
 .my-photo{
@@ -104,12 +104,22 @@
             .w3-bottom-nav .w3-bar a:hover {
                 background-color: #ddd;
             }
-    </style>
+            .subscribe-button {
+                display: block;
+                margin: 0 auto; /* 水平居中 */
+                background-color: #383838; /* 用您想要的底色替换 "your-color" */
+                color: #fff; /* 文本颜色 */
+                padding: 10px 20px; /* 调整按钮内边距 */
+                border: none;
+                cursor: pointer;
+}
+</style>
 </head>
+
 <body>
 
 <!-- Header -->
-<header class="w3-panel w3-center" style="padding: 128px 16px;">
+<header class="w3-center" style="padding: 128px 16px;">
     <div class="header-logo">
         <a href="./index.html"><img src="./logo.png">
     </div>
@@ -124,7 +134,7 @@
         </nav>
     
     <div class="w3-hide-small">
-        <div class="w3-bar w3-padding-64 " >
+        <div class="w3-bar w3-padding-32 " >
             <a href="./about_me.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">A B O U T</a>
             <a href="./index.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">I L L U S T R A T I O N</a>
             <a href="./shop.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">S H O P</a>

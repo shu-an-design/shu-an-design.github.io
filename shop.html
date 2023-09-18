@@ -63,7 +63,7 @@
 /* 大型桌面（最小寬度 1200px） */
 @media screen and (min-width: 1200px) {
 .my-text p {
-            padding: 0 300px; /* 調整左右留白的大小 */
+            padding: 0 250px; /* 調整左右留白的大小 */
 			margin-top:-30px
         }
 .my-photo{
@@ -90,7 +90,7 @@
                 padding: 0; /* 減少底部導航欄的內邊距 */
                 align-items: center; 
                 line-height: 50px;
-                height: 50px;
+                height: 50p;
             }
             .w3-bottom-nav{
                 text-decoration: none;
@@ -101,23 +101,25 @@
                 text-align: center; /* 文本水平居中 */
             }
 
-            .w3-bottom-nav a:hover {
+            .w3-bottom-nav .w3-bar a:hover {
                 background-color: #ddd;
             }
-	.subscribe-button {
-    display: block;
-    margin: 0 auto; /* 水平居中 */
-    background-color: #808080; /* 用您想要的底色替换 "your-color" */
-    padding: 10px 20px; /* 调整按钮内边距 */
-    border: none;
-    cursor: pointer;
+            .subscribe-button {
+                display: block;
+                margin: 0 auto; /* 水平居中 */
+                background-color: #b1b1b1; /* 用您想要的底色替换 */
+                color: #fff; /* 文本颜色 */
+                padding: 10px 20px; /* 调整按钮内边距 */
+                border: none;
+                cursor: pointer;
 }
-    </style>
-
+</style>
 </head>
 
+<body>
+
 <!-- Header -->
-<header class="w3-panel w3-center" style="padding: 128px 16px;">
+<header class="w3-center" style="padding: 128px 16px;">
     <div class="header-logo">
         <a href="./index.html"><img src="./logo.png">
     </div>
@@ -132,7 +134,7 @@
         </nav>
     
     <div class="w3-hide-small">
-        <div class="w3-bar w3-padding-64 " >
+        <div class="w3-bar w3-padding-32 " >
             <a href="./about_me.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">A B O U T</a>
             <a href="./index.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">I L L U S T R A T I O N</a>
             <a href="./shop.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">S H O P</a>
@@ -143,11 +145,11 @@
         <!-- Form -->
  
   <div class="container w3-center">
-    <h1 class="w3-xlarge w3-text-grey">Coming soon</h1>
-     <p class="w3-medium w3-text-grey"> We are almost there! </br>If you want to get notified when the website goes live, subscribe to our mailing list!</p>
+    <h1 class="w3-large w3-text-grey"><b>Coming soon, stay tuned!</b></h1>
+     <p class="w3-medium w3-text-grey w3-padding-8"> If you want to get notified when the website goes live, subscribe to our mailing list!</p>
   </div>
   
-<div class="container w3-center" style="background-color:#e5e5e3">
+<div class="container w3-center w3-padding-64" style="background-color:#e5e5e3">
    <form action="https://docs.google.com/forms/u/2/d/e/1FAIpQLScc3-9n2nj1CGlkkqLxrwz13y3rbEXk7xJbcl1SYa9Uw3Pycw/formResponse"
       method="POST"
       id="contact_form"
@@ -155,7 +157,7 @@
       class="feedback-form">
     <input class="form__name" type="text" placeholder="Name" name="entry.1597522291" id="name" required />
     <input class="form__email" type="text" placeholder="Email" name="entry.463085941" id="email" required />
-    <button class="w3-button w3-center subscribe-button" id="submit-button">Subscribe</button>
+    <button class="w3-button w3-center subscribe-button w3-text-grey" id="submit-button">Subscribe</button>
 </form>
 
 </div>
