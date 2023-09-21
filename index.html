@@ -7,143 +7,42 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=roboto">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body,
-        h1 {
-            font-family: "roboto", Arial, sans-serif;
-        }
-        h1 {letter-spacing: 6px}
-        .w3-row-padding img {margin-bottom: 12px}
-/* 小型手機（最小寬度 320px） */
-@media screen and (min-width: 320px) {
-        .my-text p {
-            padding: 0 10px; /* 調整左右留白的大小 */
-			margin-top:-50px
-        }
-        .my-photo{
-            padding: 0 80px; /* 調整左右留白的大小 */
-            margin-top:-50px
-        }
-        .header-logo img {
-        max-width: 100px; /* 设置小屏幕下的最大宽度 */
-        height: auto; /* 自动计算高度以保持比例 */
-        }
     
-    }
-/* 大型手機（最小寬度 576px） */
-    @media screen and (min-width: 576px) {
-        .my-text p {
-            padding: 0 10px; /* 調整左右留白的大小 */
-			margin-top:-50px
-        }
-        .my-photo{
-            padding: 0 120px; /* 調整左右留白的大小 */
-            margin-top:-50px
-        }
-        .header-logo img {
-        max-width: 100px; /* 设置小屏幕下的最大宽度 */
-        height: auto; /* 自动计算高度以保持比例 */
-        }
-    }
-/* 媒體查詢：當屏幕寬度小於768px時，調整文字左右留白 */
-@media screen and (min-width: 768px) {
-    .my-text p {
-        padding: 0 15px; /* 調整左右留白的大小 */
-		margin-top:-50px
-    }
-    .my-photo{
-        padding: 0 140px; /* 調整左右留白的大小 */
-        margin-top:-50px
-    }
-    .header-logo img {
-        max-width: 120px; /* 设置小屏幕下的最大宽度 */
-        height: auto; /* 自动计算高度以保持比例 */
-    }
-}
-/* 大型桌面（最小寬度 1200px） */
-@media screen and (min-width: 1200px) {
-.my-text p {
-            padding: 0 250px; /* 調整左右留白的大小 */
-			margin-top:-30px
-        }
-.my-photo{
-        padding: 0 160px; /* 調整左右留白的大小 */
-        margin-top:-30px
-    }
-.header-logo img {
-        max-width: 120px; /* 设置中型屏幕下的最大宽度 */
-        height: auto; /* 自动计算高度以保持比例 */
-    }
-    .w3-bottom-nav {
-        display: none;
-        height: 0; /* 或者 height: auto; */
-    }
-}
-/* 在小屏幕下，将导航栏样式调整为底部导航栏 */
-        .w3-bottom-nav{
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                background-color: #e5e5e3;
-                justify-content: space-between;
-                padding: 0; /* 減少底部導航欄的內邊距 */
-                align-items: center; 
-                line-height: 50px;
-                height: 50p;
-            }
-            .w3-bottom-nav{
-                text-decoration: none;
-                font-size: 12px;
-                color: #000;
-                display: block;
-                flex-grow: 1; /* 让按钮水平均匀分散 */
-                text-align: center; /* 文本水平居中 */
-            }
-
-            .w3-bottom-nav .w3-bar a:hover {
-                background-color: #ddd;
-            }
-            .subscribe-button {
-                display: block;
-                margin: 0 auto; /* 水平居中 */
-                background-color: #383838; /* 用您想要的底色替换 "your-color" */
-                color: #fff; /* 文本颜色 */
-                padding: 10px 20px; /* 调整按钮内边距 */
-                border: none;
-                cursor: pointer;
-}
-</style>
 </head>
 
 <body>
 
+
 <!-- Header -->
-<header class="w3-center" style="padding: 128px 16px;">
+<header class="center" style="padding: 128px 16px;">
     <div class="header-logo">
-        <a href="./index.html"><img src="./logo.png">
+        <a href="./index.html"><img src="./logo.png" alt="Shu-an"></a>
     </div>
     
     <!-- Navbar (phone) -->
-        <nav class="w3-bottom-nav">
-            <div class="w3-card w3-hide-large w3-hide-medium">
-                <a href="./about_me.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">A B O U T</a>
-                <a href="./index.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">I L L U S T R A T I O N</a>
-                <a href="./shop.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">S H O P</a>
+    <div>
+        <nav class="bottom-nav">
+            <div class="card hide-large hide-medium">
+                <a href="./about_me.html" class="bar-item button text-grey" style="font-size: 14px;">A B O U T</a>
+                <a href="./index.html" class="bar-item button text-grey" style="font-size: 14px;">I L L U S T R A T I O N</a>
+                <a href="#" class="bar-item button text-grey" style="font-size: 14px;">G R A P H I C</a>
+                <a href="./shop.html" class="bar-item button text-grey" style="font-size: 14px;">S H O P</a>
             </div>
         </nav>
     
-    <div class="w3-hide-small">
-        <div class="w3-bar w3-padding-32 " >
-            <a href="./about_me.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">A B O U T</a>
-            <a href="./index.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">I L L U S T R A T I O N</a>
-            <a href="./shop.html" class="w3-bar-item w3-button w3-text-grey" style="font-size: 14px;">S H O P</a>
+    <div class="hide-small">
+        <div class="bar padding-32" >
+            <a href="./about_me.html" class="bar-item button text-grey" style="font-size: 14px;">A B O U T</a>
+            <a href="./index.html" class="bar-item button text-grey" style="font-size: 14px;">I L L U S T R A T I O N</a>
+            <a href="#" class="bar-item button text-grey" style="font-size: 14px;">G R A P H I C</a>
+            <a href="./shop.html" class="bar-item button text-grey" style="font-size: 14px;">S H O P</a>
         </div>
       </div>
+    </div>
 </header>
 
 <!-- Photo Grid -->
-<div class="w3-row-padding my-photo">
+<div class="row-padding my-photo">
     <div class="w3-half">
         <a href="./1.html"><img src="./1.jpg" style="width:100%"></a>
         <a href="#"><img src="./2.jpg" style="width:100%"></a>
@@ -155,16 +54,16 @@
     </div>
 </div>
 
+
 <!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-xlarge" style="margin-top:128px">
-    <style>
-        a2 {margin: 20px;}
-    </style>
-    <a2 href="https://www.facebook.com/alus830/?show_switched_toast=0&show_invite_to_follow=0&show_switched_tooltip=0&show_podcast_settings=0&show_community_review_changes=0&show_community_rollback=0&show_follower_visibility_disclosure=0"target="_blank"><i class="fa fa-facebook-official w3-hover-opacity"></i></a2>
-    <a2 href="https://www.instagram.com/alus830/"target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a2>
-    <a2 href="https://www.behance.net/AlanHuangTW"target="_blank"><i class="fa fa-behance w3-hover-opacity"></i></a2>
-    <a2 href="https://www.youtube.com/channel/UCxVeSRtDdsq6qhW57Mpvhqg"target="_blank"><i class="fa fa-youtube w3-hover-opacity"></i></a2>
-    <p class="w3-tiny" style="margin-bottom:48px">Copyright ©, 2023 Shuan Huang, All Rights Reserved</p>
+<footer class="padding-64 xlarge center" style="margin-top:128px width:100%">
+    <div class="container">
+    <a href="https://www.facebook.com/alus830/?show_switched_toast=0&show_invite_to_follow=0&show_switched_tooltip=0&show_podcast_settings=0&show_community_review_changes=0&show_community_rollback=0&show_follower_visibility_disclosure=0"target="_blank"><i class="fa fa-facebook-official hover-opacity icon" style="color:#252525"></i></a>
+    <a href="https://www.instagram.com/alus830/"target="_blank"><i class="fa fa-instagram hover-opacity icon" style="color:#252525"></i></a>
+    <a href="https://www.behance.net/AlanHuangTW"target="_blank"><i class="fa fa-behance hover-opacity icon" style="color:#252525"></i></a>
+    <a href="https://www.youtube.com/channel/UCxVeSRtDdsq6qhW57Mpvhqg"target="_blank"><i class="fa fa-youtube hover-opacity icon" style="color:#252525"></i></a>
+    </div>
+    <p class="tiny" style="margin-bottom:48px">Copyright ©, 2023 Shuan Huang, All Rights Reserved</p>
 </footer>
 
 </body>
