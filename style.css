@@ -78,7 +78,6 @@ table {
         max-width: 100px; /* 小螢幕下的最大宽度 */
         height: auto; /* 自動計算高度以保持比例 */
         }
-    
     }
 /* 大型手機（最小寬度 576px） */
     @media screen and (min-width: 576px) {
@@ -94,6 +93,14 @@ table {
         max-width: 100px; /* 小螢幕下的最大宽度 */
         height: auto; /* 自動計算高度以保持比例 */
         }
+		.back-icon {
+			width: 5%;
+			height: auto;
+			position: absolute; /* 使用絕對定位，以相對於 .backbutton 定位 */
+			top: 50%; /* 垂直居中 */
+			right: 0; /* 位於 .backbutton 的右側 */
+			transform: translateY(-50%); /* 用於垂直居中 */
+		}
     }
 /* 媒體查詢：當屏幕寬度小於768px時，文字左右留白 */
 @media screen and (min-width: 768px) {
@@ -109,6 +116,15 @@ table {
         max-width: 120px; /* 小螢幕下的最大宽度 */
         height: auto; /* 自動計算高度以保持比例 */
     }
+	.back-icon {
+		width: 4%;
+		height: auto;
+		position: absolute; /* 使用絕對定位，以相對於 .backbutton 定位 */
+		top: 50%; /* 垂直居中 */
+		right: 0; /* 位於 .backbutton 的右側 */
+		transform: translateY(-50%); /* 用於垂直居中 */
+	}
+
 }
 /* 大型桌面（最小寬度 1200px） */
 @media screen and (min-width: 1200px) {
@@ -129,6 +145,15 @@ table {
         display: none;
         height: 0; /* 或者 height: auto; */
     }
+.back-icon {
+		width: 3%;
+		height: auto;
+		position: absolute; /* 使用絕對定位，以相對於 .backbutton 定位 */
+		top: 50%; /* 垂直居中 */
+		right: 0; /* 位於 .backbutton 的右側 */
+		transform: translateY(-50%); /* 用於垂直居中 */
+	}
+
 }
 /* 在小螢幕下，導航欄调整為底部導航欄 */
         .bottom-nav{
@@ -314,23 +339,25 @@ table {
 			margin-bottom:16px
 		}
   
-  		.backbutton {
+		.backbutton {
+			display: block;
+			line-height: 80px;
+			position: relative;
+		}
+		
+		
+		.img {
 			position: fixed;
-			top: 100px; /* 距離頂部的距離 */
-			right: 30px; /* 距離右邊的距離 */
+			top: 500px;
+			right: 30px;
+			vertical-align: middle;
 			text-align: right;
-			text-decoration: none; /* 移除超連結的下劃線 */
-			border: none; /* 移除按鈕邊框 */
-			cursor: pointer; /* 游標效果 */
+			text-decoration: none;
+			border: none;
+			cursor: pointer;
 		}
 		
-
-
-		.back-icon{
-			width: 7%; /* 設定圖片的寬度為5% */
-			height: auto; /* 自動調整高度以保持原始比例 */
-		}
-		
+  
   /* Style the input elements and the submit button */
   input[type=text], input[type=submit] {
 	width: 50%;
@@ -351,3 +378,5 @@ table {
   input[type=submit]:hover {
 	opacity: 0.8;
   } 
+
+
