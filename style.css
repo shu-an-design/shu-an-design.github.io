@@ -380,12 +380,12 @@ table {
   } 
 
 /* 初始樣式 */
-#animated-image {
+.animated-image {
     width: 100%;
     transition: transform 0.5s; /* 使用 CSS transition 屬性設置動畫 */
   }
 
   /* 滑鼠移入時的樣式 */
-#animated-image:hover {
+.animated-image:hover {
     transform: scale(1.03); /* 縮放圖片 */
   }
