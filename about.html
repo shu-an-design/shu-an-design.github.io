@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About | Shu-an</title>
+    <meta
+      name="description"
+      content="About Shu-an Huang — Senior Graphic Designer and Illustrator from Taiwan."
+    />
+    <link rel="icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./bento-style.css" />
+    <style>
+      /* ── ABOUT PAGE SPECIFIC ── */
+      .about-main {
+        margin-left: var(--sidebar-w);
+        flex: 1;
+        padding: var(--gap);
+        overflow-y: auto;
+        height: 100vh;
+        box-sizing: border-box;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 1fr 1fr;
+        gap: var(--gap);
+        height: calc(100vh - var(--gap) * 2);
+        min-height: 0;
+      }
+
+      /* Card spans */
+      .about-card-name {
+        grid-column: span 4;
+        grid-row: span 2;
+      }
+      .about-card-bio {
+        grid-column: span 8;
+        grid-row: span 1;
+      }
+      .about-card-skills {
+        grid-column: span 4;
+        grid-row: span 1;
+      }
+      .about-card-music {
+        grid-column: span 4;
+        grid-row: span 1;
+      }
+
+      /* Name card */
+      .about-card-name {
+        background: var(--card-dark);
+        color: #f2ede8;
+        padding: 32px 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .about-card-name h1 {
+        font-size: clamp(2.2rem, 3vw, 3.4rem);
+        font-weight: 300;
+        line-height: 1.05;
+      }
+
+      .about-card-name h1 em {
+        font-style: italic;
+        color: var(--card-warm);
+      }
+
+      .about-card-name .name-role {
+        font-size: 0.6rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #6a6058;
+        line-height: 2;
+      }
+
+      .about-card-name .name-tag {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 100px;
+        border: 1px solid rgba(242, 237, 232, 0.2);
+        font-size: 0.55rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(242, 237, 232, 0.5);
+      }
+
+      /* Bio card */
+      .about-card-bio {
+        background: var(--card-bg);
+        padding: 28px 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .about-card-bio p {
+        font-size: clamp(0.85rem, 1.1vw, 1rem);
+        font-weight: 300;
+        line-height: 1.8;
+        color: var(--ink);
+      }
+
+      /* Skills */
+      .about-card-skills {
+        background: var(--accent);
+        color: #fff;
+        padding: 24px 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .skill-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .skill-list li {
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        opacity: 0.9;
+      }
+
+      .skill-list li::before {
+        content: "✦";
+        font-size: 0.5rem;
+        opacity: 0.7;
+      }
+
+      /* Music */
+      .about-card-music {
+        background: var(--card-warm);
+        color: #fff;
+        padding: 24px 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .about-card-music p {
+        font-size: 0.78rem;
+        font-weight: 300;
+        line-height: 1.75;
+        opacity: 0.9;
+      }
+
+      .music-icons {
+        font-size: 1.4rem;
+        letter-spacing: 6px;
+        opacity: 0.8;
+      }
+
+      /* ── SIDEBAR LAYOUT OVERRIDE ── */
+      /* Push nav links to the middle/bottom area */
+      .sidebar {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .sidebar-logo {
+        /* stays at top */
+      }
+
+      .sidebar-links {
+        margin-top: auto; /* push nav down */
+      }
+
+      /* Icon links sit just below nav */
+      .sidebar-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        padding-bottom: 8px;
+        margin-top: 20px;
+      }
+
+      .sidebar-divider {
+        width: 100%;
+        height: 1px;
+        background: rgba(242, 237, 232, 0.15);
+      }
+
+      .sidebar-icon-links {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .sidebar-icon-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: rgba(242, 237, 232, 0.7);
+        transition: color 0.25s;
+      }
+
+      .sidebar-icon-link:hover {
+        color: #f2ede8;
+      }
+
+      .sidebar-icon-link svg {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+        transition: opacity 0.25s;
+      }
+
+      /* dot pushed below icons */
+      .sidebar-dot {
+        margin-top: 20px;
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 900px) {
+        .about-main {
+          margin-left: 0;
+          height: auto;
+        }
+        .about-grid {
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: auto;
+          height: auto;
+        }
+        .about-card-name {
+          grid-column: span 2;
+          grid-row: span 1;
+          min-height: 220px;
+        }
+        .about-card-bio {
+          grid-column: span 2;
+        }
+        .about-card-skills {
+          grid-column: span 1;
+        }
+        .about-card-music {
+          grid-column: span 1;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+        .about-card-name,
+        .about-card-bio,
+        .about-card-skills,
+        .about-card-music {
+          grid-column: span 1;
+        }
+      }
+      @media (max-width: 900px) {
+        .sidebar-icon-links {
+          flex-direction: row;
+          gap: 16px;
+          margin-left: 20px;
+        }
+        .sidebar-bottom {
+          flex-direction: row;
+          margin-top: 0;
+        }
+        .sidebar-divider {
+          display: none;
+        }
+        .sidebar {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          padding: 14px 20px;
+        }
+        .sidebar-links {
+          margin-top: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <a class="sidebar-logo" href="./bento-index.html">Shu-an</a>
+
+        <!-- Nav links pushed down via margin-top:auto on ul -->
+        <ul class="sidebar-links">
+          <li><a href="./about.html" class="active">About</a></li>
+          <li><a href="./works.html">Work</a></li>
+        </ul>
+
+        <!-- Icons sit just below nav, white, larger -->
+        <div class="sidebar-bottom">
+          <div class="sidebar-divider"></div>
+          <div class="sidebar-icon-links">
+            <!-- Email -->
+            <a
+              class="sidebar-icon-link"
+              href="mailto:alus830@gmail.com"
+              title="Email"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <polyline points="2,4 12,13 22,4" />
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a
+              class="sidebar-icon-link"
+              href="https://www.instagram.com/alus830/"
+              target="_blank"
+              title="Instagram"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4.5" />
+                <circle
+                  cx="17.5"
+                  cy="6.5"
+                  r="0.7"
+                  fill="currentColor"
+                  stroke="none"
+                />
+              </svg>
+            </a>
+            <!-- Behance -->
+            <a
+              class="sidebar-icon-link"
+              href="https://www.behance.net/AlanHuangTW"
+              target="_blank"
+              title="Behance"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M7.8 11.6c.7 0 1.2-.5 1.2-1.2S8.5 9.2 7.8 9.2H4.5v2.4h3.3zm.4 2.1H4.5v2.7H8c.8 0 1.4-.6 1.4-1.35s-.6-1.35-1.2-1.35zM2.5 7h6C10.4 7 11.7 8.3 11.7 10c0 1-.5 1.9-1.3 2.4 1 .4 1.7 1.4 1.7 2.6C12.1 16.7 10.8 18 9 18H2.5V7zm12 2h5V7.8h-5V9zm2.5 7.2c1 0 1.8-.7 1.9-1.7h-3.8c.1 1 .9 1.7 1.9 1.7zm-2-3.2h4c0-.9-.8-1.5-2-1.5s-1.9.6-2 1.5zM14.5 11C12.6 11 11 12.6 11 14.5S12.6 18 14.5 18 18 16.4 18 14.5 16.4 11 14.5 11z"
+                />
+              </svg>
+            </a>
+            <!-- LinkedIn -->
+            <!-- <a class="sidebar-icon-link" href="https://linkedin.com/" target="_blank" title="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="3"/>
+                <line x1="7" y1="10" x2="7" y2="17"/>
+                <line x1="7" y1="7" x2="7" y2="7.01" stroke-width="2.5"/>
+                <path d="M11 10v7m0-4c0-2 5-2 5 0v4"/>
+              </svg>
+            </a> -->
+          </div>
+        </div>
+
+        <div class="sidebar-dot"></div>
+      </aside>
+
+      <!-- ABOUT MAIN -->
+      <main class="about-main">
+        <div class="about-grid">
+          <!-- 姓名卡 -->
+          <div class="card about-card-name">
+            <span class="label-small">✦ About Me</span>
+            <h1>Shu-<em>an</em><br />Huang</h1>
+            <div>
+              <p class="name-role">
+                Senior Graphic Designer<br />× Illustrator<br />Taiwan
+              </p>
+            </div>
+            <span class="name-tag">10+ Years Experience</span>
+          </div>
+
+          <!-- 自我介紹（Hello + My Work 合併） -->
+          <div class="card about-card-bio">
+            <span class="label-small">✦ Hello</span>
+            <p>
+              Hi, I'm Shuan, or you can call me Alan. I'm a senior graphic
+              designer and illustrator from Taiwan with over 10 years of
+              experience. I have a strong passion for flat art and the geometric
+              style, which emphasizes shapes and patterns, allowing me to turn
+              creativity into captivating visuals.
+            </p>
+            <p>
+              My expertise covers graphic design, brand identity, and
+              illustration. I've worked on diverse projects, from corporate
+              branding to cultural event visuals. I excel in using design tools
+              such as the Adobe Creative Suite to create beautiful graphics and
+              illustrations with a profound understanding of color, layout, and
+              visual balance.
+            </p>
+          </div>
+
+          <!-- 技能 -->
+          <div class="card about-card-skills">
+            <span class="label-small">✦ Skills</span>
+            <ul class="skill-list">
+              <li>Graphic Design</li>
+              <li>Brand Identity</li>
+              <li>Illustration</li>
+              <li>Flat Art / Geometric</li>
+              <li>Visual Storytelling</li>
+            </ul>
+          </div>
+
+          <!-- 音樂 -->
+          <div class="card about-card-music">
+            <span class="label-small" style="opacity: 0.7"
+              >✦ Beyond Design</span
+            >
+            <p>
+              Deeply involved in music — piano, drums, and lately fully immersed
+              in the world of modular synthesizers (Eurorack), incorporating
+              musical influences into my illustrations.
+            </p>
+            <div class="music-icons">🎹 🥁 🎛️</div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => entry.target.classList.add("visible"), i * 80);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.05 }
+      );
+      document
+        .querySelectorAll(".card")
+        .forEach((card) => observer.observe(card));
+    </script>
+  </body>
+</html>
